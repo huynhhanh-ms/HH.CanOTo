@@ -1,0 +1,11 @@
+Model Cân Oto:A9-D2008F
+TSHT Oto:COM1  9600  8  None
+Port Name Oto:COM1
+Baudrate Oto:9600
+Data Bits Oto:8
+Patity Oto:None
+Ký tự đầu:2
+Vị trí đầu:0
+Vị trí kết thúc:7
+Độ dài:7
+Thập Phân:0
