@@ -11,7 +11,7 @@
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
         FontFamily="{materialDesign:MaterialDesignFont}"
-        Title="MainWindow" Height="1080" Width="1928"  WindowState="Maximized">
+        Title="MainWindow" Height="540" Width="864"  WindowState="Maximized">
     <Grid>
 
         <Grid>
@@ -30,7 +30,7 @@
                     <StackPanel Orientation="Horizontal">
                         <!--COM PORT -->
                         <materialDesign:Card materialDesign:ElevationAssist.Elevation="Dp5" Margin="20px">
-                            <TextBlock Margin="10" Text="40 402 002" FontSize="75px" FontWeight="Bold" Foreground="Red" TextAlignment="Center" VerticalAlignment="Center" Width="400px"/>
+                            <TextBlock x:Name="PortComView" Margin="10" Text="0" FontSize="75px" FontWeight="Bold" Foreground="Red" TextAlignment="Center" VerticalAlignment="Center" Width="400px"/>
                         </materialDesign:Card>
 
                         <!-- Xe + Hang -->
