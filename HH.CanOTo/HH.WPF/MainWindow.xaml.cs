@@ -29,7 +29,7 @@ namespace HH.WPF
 
             InitializeComponent();
             InitializeSerialPort();
-            dataDisplay.Text = "data: ";
+            //dataDisplay.Text = "data: ";
 
         }
         private void InitializeSerialPort()
@@ -48,7 +48,7 @@ namespace HH.WPF
                 portInfo += $"Parity: {serialPort.Parity}\n";
                 portInfo += $"Stop Bits: {serialPort.StopBits}\n";
                 portInfo += $"Handshake: {serialPort.Handshake}";
-                portInfoText.Text = portInfo;
+                //portInfoText.Text = portInfo;
 
             }
             catch (Exception ex)
@@ -68,7 +68,7 @@ namespace HH.WPF
             // Use a Dispatcher to update the UI from a different thread (since DataReceived event runs on a separate thread)
             Dispatcher.Invoke(() =>
             {
-                dataDisplay.Text = "data: " + data;
+                //dataDisplay.Text = "data: " + data;
             });
         }
 
@@ -78,13 +78,5 @@ namespace HH.WPF
             serialPort.Close();
         }
 
-        private void vehicleManager_Click(object sender, RoutedEventArgs e)
-        {
-            //go to vehiclemcnager same window 
-            VehicleManager vehicleManager = new VehicleManager();
-         vehicleManager.Show();
-            this.Close();
-
-        }
     }
 }

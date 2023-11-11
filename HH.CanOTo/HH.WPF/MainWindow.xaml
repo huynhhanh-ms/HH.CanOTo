@@ -11,11 +11,102 @@
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
         FontFamily="{materialDesign:MaterialDesignFont}"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="1080" Width="1928"  WindowState="Maximized">
     <Grid>
-        <TextBlock Name="dataDisplay" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" />
-        <TextBlock Name="portInfoText" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" />
-        <Button Name="vehicleManager" Content="Đăng Nhập" HorizontalAlignment="Left" Margin="282,104,0,0" VerticalAlignment="Top" Height="36" Width="197" Foreground="White" Click="vehicleManager_Click"/>
+
+        <Grid>
+
+            <!-- setup grid -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+
+
+            <!-- COM PORT + Button + Print -->
+            <ContentControl>
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <!--COM PORT -->
+                        <materialDesign:Card materialDesign:ElevationAssist.Elevation="Dp5" Margin="20px">
+                            <TextBlock Margin="10" Text="40 402 002" FontSize="75px" FontWeight="Bold" Foreground="Red" TextAlignment="Center" VerticalAlignment="Center" Width="400px"/>
+                        </materialDesign:Card>
+
+                        <!-- Xe + Hang -->
+                        <Button Margin="10" Width="150px" Height="75px">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="TruckMinus" Foreground="White" Height="25px" Width="25px"/>
+                                <TextBlock Text=" Xe+Hàng" Foreground="White" FontSize="20px"/>
+
+                            </StackPanel>
+                        </Button>
+                        <!-- Xac Xe -->
+                        <Button Margin="10" Width="150px" Height="75px">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="CarPickup" Foreground="White" Height="25px" Width="25px"/>
+                                <TextBlock Text=" Xác Xe" Foreground="White" FontSize="20px"/>
+
+                            </StackPanel>
+                        </Button>
+                        <!-- In Phieu Can -->
+                        <Button Margin="10" Width="175px" Height="75px">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Printer" Foreground="White" Height="25px" Width="25px"/>
+                                <TextBlock Text=" In Phiếu Cân" Foreground="White" FontSize="20px"/>
+
+                            </StackPanel>
+                        </Button>
+
+                        <!-- Them Moi -->
+                        <Button Margin="10" Width="175px" Height="75px">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="PlusBoxMultiple" Foreground="White" Height="25px" Width="25px"/>
+                                <TextBlock Text=" Thêm Mới" Foreground="White" FontSize="20px"/>
+                            </StackPanel>
+                        </Button>
+
+                        <!-- Luu Lai -->
+                        <Button Margin="10" Width="175px" Height="75px">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="SD" Foreground="White" Height="25px" Width="25px"/>
+                                <TextBlock Text=" Lưu Lại" Foreground="White" FontSize="20px"/>
+                            </StackPanel>
+                        </Button>
+                        <!-- Lich Su -->
+                        <Button Margin="10" Width="175px" Height="75px">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="History" Foreground="White" Height="25px" Width="25px"/>
+                                <TextBlock Text=" Lịch Sử" Foreground="White" FontSize="20px"/>
+                            </StackPanel>
+                        </Button>
+
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="20px">
+                        <!-- Search by Date -->
+                        <DatePicker Width="140" materialDesign:HintAssist.Hint="Từ Ngày" Style="{StaticResource MaterialDesignOutlinedDatePicker}" Margin="10px"/>
+                        <DatePicker Width="140" materialDesign:HintAssist.Hint="Đến Ngày" Style="{StaticResource MaterialDesignOutlinedDatePicker}" Margin="10px"/>
+                        <TextBox Height="50" materialDesign:HintAssist.Hint="Từ khóa tìm kiếm" AcceptsReturn="True" Style="{StaticResource MaterialDesignOutlinedTextBox}"  VerticalScrollBarVisibility="Auto"  Margin="10px"/>
+                        <Button Margin="10"  Height="50" Width="140"
+  Content="Tìm Kiếm"
+  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+  Style="{StaticResource MaterialDesignPaperLightButton}"
+  ToolTip="Resource name: MaterialDesignPaperLightButton" />
+
+                    </StackPanel>
+
+                </StackPanel>
+            </ContentControl>
+
+            <!-- data grid -->
+            <local:DataGrids Grid.Row="2"/>
+            <GridSplitter Grid.Row="1" Height="5" VerticalAlignment="Top" HorizontalAlignment="Stretch" ResizeDirection="Rows" Background="Gray" />
+
+            <!--<TextBlock Grid.Row="2" Name="dataDisplay" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" />-->
+            <!--<TextBlock Grid.Row="3" Name="portInfoText" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" />-->
+
+        </Grid>
 
     </Grid>
 </Window>
