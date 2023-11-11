@@ -53,7 +53,7 @@ namespace HH.WPF
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error opening COM port: " + ex.Message);
+                MessageBox.Show("Không thể kết nối với Thiết Bị Cân, Error:" + ex.Message);
             }
         }
 
@@ -76,6 +76,15 @@ namespace HH.WPF
         {
             base.OnClosed(e);
             serialPort.Close();
+        }
+
+        private void vehicleManager_Click(object sender, RoutedEventArgs e)
+        {
+            //go to vehiclemcnager same window 
+            VehicleManager vehicleManager = new VehicleManager();
+         vehicleManager.Show();
+            this.Close();
+
         }
     }
 }
