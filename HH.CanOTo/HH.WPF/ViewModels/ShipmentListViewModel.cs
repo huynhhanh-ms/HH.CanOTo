@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using HH.WPF.ViewModels;
+using System.Security.Cryptography;
 
 namespace HH.WPF.ViewModels;
 
@@ -23,6 +24,15 @@ public class ShipmentListViewModel : ViewModelBase
                     OnPropertyChanged(nameof(IsAllItems1Selected));
             };
         }
+    }
+
+    public bool AddItem()
+    {
+        Items1.Add(new ShipmentModel
+        {
+            Id = RandomNumberGenerator.GetInt32(0, 100),
+        });
+        return true;
     }
 
     public bool? IsAllItems1Selected
@@ -55,26 +65,6 @@ public class ShipmentListViewModel : ViewModelBase
         return new ObservableCollection<ShipmentModel>
         {
             //    public ShipmentModel(bool isSelected, int id, string? tenKhachHang, string? diaChi, string? loadHangHoa, string? bienSoXe, double? tlXeHang, double? tlXe, double? tlHang, double? giaMua, double? thanhTien, DateTime? ngayCan, DateTime? gioCanXe, DateTime? gioCanXac, string? ghiChu)
-            new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
             new ShipmentModel(),
             new ShipmentModel(),
             new ShipmentModel(),

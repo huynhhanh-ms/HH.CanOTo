@@ -20,9 +20,11 @@ namespace HH.WPF
     /// </summary>
     public partial class DataGrids
     {
+        public ShipmentListViewModel data;
         public DataGrids()
         {
-            DataContext = new ShipmentListViewModel();
+            data = new ShipmentListViewModel();
+            DataContext = data;
             InitializeComponent();
         }
 
@@ -67,6 +69,11 @@ namespace HH.WPF
             ScrollViewer scv = (ScrollViewer)sender;
             scv.ScrollToVerticalOffset(scv.VerticalOffset - e.Delta / 7);
             e.Handled = true;
+        }
+
+        private void AddRow_Click(object sender, RoutedEventArgs e)
+        {
+            data.AddItem();
         }
     }
 }
