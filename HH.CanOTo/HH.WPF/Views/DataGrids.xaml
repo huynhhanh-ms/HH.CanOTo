@@ -21,7 +21,7 @@
 
 
     <DockPanel>
-        <Button Content="Add Row" Click="AddRow_Click" />
+        <!--<Button Content="Add Row" Click="AddRow_Click" />-->
         <!--<FrameworkElement x:Name="DataContextProxy" DataContext="{Binding}" Height="0" />-->
         <DataGrid Name="gridview1" AutoGenerateColumns="False"
             GridLinesVisibility="All"

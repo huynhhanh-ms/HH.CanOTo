@@ -70,10 +70,5 @@ namespace HH.WPF
             scv.ScrollToVerticalOffset(scv.VerticalOffset - e.Delta / 7);
             e.Handled = true;
         }
-
-        private void AddRow_Click(object sender, RoutedEventArgs e)
-        {
-            data.AddItem();
-        }
     }
 }

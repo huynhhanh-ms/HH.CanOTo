@@ -88,5 +88,9 @@ namespace HH.WPF
         }
         #endregion
 
+        private void ButtonAdd_Click(object sender, RoutedEventArgs e)
+        {
+            DataGrids.data.AddItem();
+        }
     }
 }
