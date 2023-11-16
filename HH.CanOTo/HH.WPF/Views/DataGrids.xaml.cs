@@ -1,4 +1,4 @@
-﻿using HH.WPF.Domain;
+﻿using HH.WPF.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +22,7 @@ namespace HH.WPF
     {
         public DataGrids()
         {
-            DataContext = new ListsAndGridsViewModel();
+            DataContext = new ShipmentListViewModel();
             InitializeComponent();
         }
 
@@ -43,6 +43,23 @@ namespace HH.WPF
         private void gridview1_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
         {
             //MessageBox.Show("CellEditEnding"); 
+        }
+
+        private void myDataGrid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DependencyObject dep = (DependencyObject)e.OriginalSource;
+
+            // Tìm DataGridRow từ sự kiện Click
+            while (!(dep is DataGridRow) && dep != null)
+            {
+                dep = VisualTreeHelper.GetParent(dep);
+            }
+
+            if (dep is DataGridRow row)
+            {
+                // Chọn dòng được click
+                row.IsSelected = true;
+            }
         }
     }
 }

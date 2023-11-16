@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using System.Windows.Controls;
 
-namespace HH.WPF.Domain;
+namespace HH.WPF.ViewModels;
 
 public class NotEmptyValidationRule : ValidationRule
 {

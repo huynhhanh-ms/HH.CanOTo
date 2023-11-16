@@ -81,9 +81,16 @@
                             </StackPanel>
                         </Button>
 
+                        <Button Margin="10" Width="175px" Height="75px">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Reload" Foreground="White" Height="25px" Width="25px"/>
+                                <TextBlock Text=" Làm mới" Foreground="White" FontSize="20px"/>
+                            </StackPanel>
+                        </Button>
+
                     </StackPanel>
 
-                    <StackPanel Orientation="Horizontal" Margin="20px">
+                    <StackPanel Orientation="Horizontal" Margin="20px" HorizontalAlignment="Center">
                         <!-- Search by Date -->
                         <DatePicker Width="140" materialDesign:HintAssist.Hint="Từ Ngày" Style="{StaticResource MaterialDesignOutlinedDatePicker}" Margin="10px"/>
                         <DatePicker Width="140" materialDesign:HintAssist.Hint="Đến Ngày" Style="{StaticResource MaterialDesignOutlinedDatePicker}" Margin="10px"/>

@@ -5,17 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
-using HH.WPF.Domain;
+using HH.WPF.ViewModels;
 
-namespace HH.WPF.Domain;
+namespace HH.WPF.ViewModels;
 
 public class ListsAndGridsViewModel : ViewModelBase
 {
     public ListsAndGridsViewModel()
     {
         Items1 = CreateData();
-        Items2 = CreateData();
-        Items3 = CreateData();
 
         foreach (var model in Items1)
         {
@@ -79,8 +77,6 @@ public class ListsAndGridsViewModel : ViewModelBase
     }
 
     public ObservableCollection<SelectableViewModel> Items1 { get; }
-    public ObservableCollection<SelectableViewModel> Items2 { get; }
-    public ObservableCollection<SelectableViewModel> Items3 { get; }
 
     public IEnumerable<string> Foods => new[] { "Burger", "Fries", "Shake", "Lettuce" };
 }
