@@ -5,9 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
-using HH.WPF.ViewModels;
 
-namespace HH.WPF.ViewModels;
+namespace HH.WPF.ViewModels.Example;
 
 public class ListsAndGridsViewModel : ViewModelBase
 {

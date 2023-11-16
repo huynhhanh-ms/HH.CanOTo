@@ -1,4 +1,4 @@
-﻿namespace HH.WPF.ViewModels;
+﻿namespace HH.WPF.ViewModels.Example;
 
 public class SelectableViewModel : ViewModelBase
 {

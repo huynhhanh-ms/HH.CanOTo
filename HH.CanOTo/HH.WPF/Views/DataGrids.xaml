@@ -19,19 +19,16 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <StackPanel>
-        <FrameworkElement x:Name="DataContextProxy" DataContext="{Binding}" Height="0" />
-        <ScrollViewer>
-            <DataGrid Name="gridview1" AutoGenerateColumns="False"
+
+        <!--<FrameworkElement x:Name="DataContextProxy" DataContext="{Binding}" Height="0" />-->
+        <DataGrid Name="gridview1" AutoGenerateColumns="False"
             GridLinesVisibility="All"
-                CanUserAddRows="False"
-                MinHeight="400px"
                 CellEditEnding="gridview1_CellEditEnding"
                 SelectionMode="Single"
                 MouseLeftButtonDown="myDataGrid_MouseLeftButtonDown"
                 HeadersVisibility="All"
                 ItemsSource="{Binding Items1}" >
-                <!--<DataGrid.Resources>
+            <!--<DataGrid.Resources>
                     <Style TargetType="{x:Type DataGridRow}">
                         <Style.Triggers>
                             <Trigger Property="IsSelected" Value="True">
@@ -41,8 +38,8 @@
                         </Style.Triggers>
                     </Style>
                 </DataGrid.Resources>-->
-                <DataGrid.Columns>
-                    <!--<DataGridCheckBoxColumn Binding="{Binding IsSelected, UpdateSourceTrigger=PropertyChanged}"
+            <DataGrid.Columns>
+                <!--<DataGridCheckBoxColumn Binding="{Binding IsSelected, UpdateSourceTrigger=PropertyChanged}"
                                   EditingElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnEditingStyle}"
                                   ElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}">
                         <DataGridCheckBoxColumn.Header>
@@ -57,209 +54,212 @@
                             </Style>
                         </DataGridCheckBoxColumn.HeaderStyle>
                     </DataGridCheckBoxColumn>-->
-<!--Mã-->
-                    <DataGridTextColumn Binding="{Binding Id}"
+
+                <!--Mã-->
+                <DataGridTextColumn Binding="{Binding Id}"
                               EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
                               ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                               Width="75"
                               Header="Mã" />
-<!--Tên Khách Hàng-->
-                    <DataGridTextColumn
+                <!--Tên Khách Hàng-->
+                <DataGridTextColumn
                               EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
                               Header="Tên Khách Hàng">
-                        <DataGridTextColumn.Binding>
-                            <Binding Path="TenKhachHang">
-                                <Binding.ValidationRules>
-                                    <ViewModels:NotEmptyValidationRule />
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </DataGridTextColumn.Binding>
-                    </DataGridTextColumn>
+                    <DataGridTextColumn.Binding>
+                        <Binding Path="TenKhachHang">
+                            <Binding.ValidationRules>
+                                <ViewModels:NotEmptyValidationRule />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
 
-<!--Địa Chỉ-->
-                    <DataGridTextColumn
+                <!--Địa Chỉ-->
+                <DataGridTextColumn
                               EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
                               Header="Địa Chỉ">
-                        <DataGridTextColumn.Binding>
-                            <Binding Path="DiaChi">
-                                <Binding.ValidationRules>
-                                    <ViewModels:NotEmptyValidationRule />
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </DataGridTextColumn.Binding>
-                    </DataGridTextColumn>
+                    <DataGridTextColumn.Binding>
+                        <Binding Path="DiaChi">
+                            <Binding.ValidationRules>
+                                <ViewModels:NotEmptyValidationRule />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
 
-<!--Loại Hàng Hóa-->
-                    <DataGridTextColumn
+                <!--Loại Hàng Hóa-->
+                <DataGridTextColumn
                               EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
                               Header="Loại Hàng Hóa">
-                        <DataGridTextColumn.Binding>
-                            <Binding Path="LoaiHangHoa">
-                                <Binding.ValidationRules>
-                                    <ViewModels:NotEmptyValidationRule />
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </DataGridTextColumn.Binding>
-                    </DataGridTextColumn>
+                    <DataGridTextColumn.Binding>
+                        <Binding Path="LoaiHangHoa">
+                            <Binding.ValidationRules>
+                                <ViewModels:NotEmptyValidationRule />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
 
-<!--Biển Số Xe-->
-                    <DataGridTextColumn
+                <!--Biển Số Xe-->
+                <DataGridTextColumn
                               EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
                               Header="Biển Số Xe">
-                        <DataGridTextColumn.Binding>
-                            <Binding Path="BienSoXe">
-                                <Binding.ValidationRules>
-                                    <ViewModels:NotEmptyValidationRule />
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </DataGridTextColumn.Binding>
-                    </DataGridTextColumn>
+                    <DataGridTextColumn.Binding>
+                        <Binding Path="BienSoXe">
+                            <Binding.ValidationRules>
+                                <ViewModels:NotEmptyValidationRule />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
 
-<!--TL Xe Hàng-->
-                    <materialDesign:DataGridTextColumn Width="120"
+                <!--TL Xe Hàng-->
+                <materialDesign:DataGridTextColumn Width="120"
                                              Binding="{Binding TlXeHang}"
                                              EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
                                              Header="TL Xe Hàng">
-                        <DataGridTextColumn.HeaderStyle>
-                            <Style TargetType="{x:Type DataGridColumnHeader}" BasedOn="{StaticResource MaterialDesignDataGridColumnHeader}">
-                                <Setter Property="ContentTemplate">
-                                    <Setter.Value>
-                                        <DataTemplate>
-                                            <TextBlock Text="{Binding}"
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}" BasedOn="{StaticResource MaterialDesignDataGridColumnHeader}">
+                            <Setter Property="ContentTemplate">
+                                <Setter.Value>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding}"
                                  TextAlignment="Right"
                                  TextWrapping="Wrap" />
-                                        </DataTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                                <Setter Property="HorizontalContentAlignment" Value="Right" />
-                            </Style>
-                        </DataGridTextColumn.HeaderStyle>
+                                    </DataTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="HorizontalContentAlignment" Value="Right" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
 
-                        <DataGridTextColumn.ElementStyle>
-                            <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource MaterialDesignDataGridTextColumnStyle}">
-                                <Setter Property="HorizontalAlignment" Value="Right" />
-                            </Style>
-                        </DataGridTextColumn.ElementStyle>
-                    </materialDesign:DataGridTextColumn>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource MaterialDesignDataGridTextColumnStyle}">
+                            <Setter Property="HorizontalAlignment" Value="Right" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </materialDesign:DataGridTextColumn>
 
-<!--TL Xe-->
-                    <materialDesign:DataGridTextColumn Width="120"
+                <!--TL Xe-->
+                <materialDesign:DataGridTextColumn Width="120"
                                              Binding="{Binding TlXe}"
                                              EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
                                              Header="TL Xe">
-                        <DataGridTextColumn.HeaderStyle>
-                            <Style TargetType="{x:Type DataGridColumnHeader}" BasedOn="{StaticResource MaterialDesignDataGridColumnHeader}">
-                                <Setter Property="ContentTemplate">
-                                    <Setter.Value>
-                                        <DataTemplate>
-                                            <TextBlock Text="{Binding}"
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}" BasedOn="{StaticResource MaterialDesignDataGridColumnHeader}">
+                            <Setter Property="ContentTemplate">
+                                <Setter.Value>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding}"
                                  TextAlignment="Right"
                                  TextWrapping="Wrap" />
-                                        </DataTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                                <Setter Property="HorizontalContentAlignment" Value="Right" />
-                            </Style>
-                        </DataGridTextColumn.HeaderStyle>
+                                    </DataTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="HorizontalContentAlignment" Value="Right" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
 
-                        <DataGridTextColumn.ElementStyle>
-                            <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource MaterialDesignDataGridTextColumnStyle}">
-                                <Setter Property="HorizontalAlignment" Value="Right" />
-                            </Style>
-                        </DataGridTextColumn.ElementStyle>
-                    </materialDesign:DataGridTextColumn>
-<!--TL Hàng-->
-                    <materialDesign:DataGridTextColumn Width="120"
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource MaterialDesignDataGridTextColumnStyle}">
+                            <Setter Property="HorizontalAlignment" Value="Right" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </materialDesign:DataGridTextColumn>
+                <!--TL Hàng-->
+                <materialDesign:DataGridTextColumn Width="120"
                                              Binding="{Binding TlHang}"
                                              EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
                                              Header="TL Hàng">
-                        <DataGridTextColumn.HeaderStyle>
-                            <Style TargetType="{x:Type DataGridColumnHeader}" BasedOn="{StaticResource MaterialDesignDataGridColumnHeader}">
-                                <Setter Property="ContentTemplate">
-                                    <Setter.Value>
-                                        <DataTemplate>
-                                            <TextBlock Text="{Binding}"
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}" BasedOn="{StaticResource MaterialDesignDataGridColumnHeader}">
+                            <Setter Property="ContentTemplate">
+                                <Setter.Value>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding}"
                                  TextAlignment="Right"
                                  TextWrapping="Wrap" />
-                                        </DataTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                                <Setter Property="HorizontalContentAlignment" Value="Right" />
-                            </Style>
-                        </DataGridTextColumn.HeaderStyle>
+                                    </DataTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="HorizontalContentAlignment" Value="Right" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
 
-                        <DataGridTextColumn.ElementStyle>
-                            <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource MaterialDesignDataGridTextColumnStyle}">
-                                <Setter Property="HorizontalAlignment" Value="Right" />
-                            </Style>
-                        </DataGridTextColumn.ElementStyle>
-                    </materialDesign:DataGridTextColumn>
-<!--Ngày Cân-->
-                    <DataGridTextColumn
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource MaterialDesignDataGridTextColumnStyle}">
+                            <Setter Property="HorizontalAlignment" Value="Right" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </materialDesign:DataGridTextColumn>
+                <!--Ngày Cân-->
+                <DataGridTextColumn
                               EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
                               Header="Ngày Cân">
-                        <DataGridTextColumn.Binding>
-                            <Binding Path="NgayCan">
-                                <Binding.ValidationRules>
-                                    <ViewModels:NotEmptyValidationRule />
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </DataGridTextColumn.Binding>
-                    </DataGridTextColumn>
-<!--Giờ Cân Xe-->
-                    <DataGridTextColumn
+                    <DataGridTextColumn.Binding>
+                        <Binding Path="NgayCan">
+                            <Binding.ValidationRules>
+                                <ViewModels:NotEmptyValidationRule />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+                <!--Giờ Cân Xe-->
+                <DataGridTextColumn
                               EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
                               Header="Giờ Cân Xe">
-                        <DataGridTextColumn.Binding>
-                            <Binding Path="GioCanXe">
-                                <Binding.ValidationRules>
-                                    <ViewModels:NotEmptyValidationRule />
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </DataGridTextColumn.Binding>
-                    </DataGridTextColumn>
-<!--Giờ Cân Xác-->
-                    <DataGridTextColumn
+                    <DataGridTextColumn.Binding>
+                        <Binding Path="GioCanXe">
+                            <Binding.ValidationRules>
+                                <ViewModels:NotEmptyValidationRule />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+                <!--Giờ Cân Xác-->
+                <DataGridTextColumn
                               EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
                               Header="Giờ Cân Xác">
-                        <DataGridTextColumn.Binding>
-                            <Binding Path="GioCanXac">
-                                <Binding.ValidationRules>
-                                    <ViewModels:NotEmptyValidationRule />
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </DataGridTextColumn.Binding>
-                    </DataGridTextColumn>
-<!--Ghi Chú-->
-                    <DataGridTextColumn
+                    <DataGridTextColumn.Binding>
+                        <Binding Path="GioCanXac">
+                            <Binding.ValidationRules>
+                                <ViewModels:NotEmptyValidationRule />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+                <!--Ghi Chú-->
+                <DataGridTextColumn
                               EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
                               Header="Ghi Chú">
-                        <DataGridTextColumn.Binding>
-                            <Binding Path="GhiChu">
-                                <Binding.ValidationRules>
-                                    <ViewModels:NotEmptyValidationRule />
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </DataGridTextColumn.Binding>
-                    </DataGridTextColumn>
-                    <!-- use custom combo box column to get better combos. Use ItemsSourceBinding as your binding template to be applied to each combo --><!--
+                    <DataGridTextColumn.Binding>
+                        <Binding Path="GhiChu">
+                            <Binding.ValidationRules>
+                                <ViewModels:NotEmptyValidationRule />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+                <!-- use custom combo box column to get better combos. Use ItemsSourceBinding as your binding template to be applied to each combo -->
+                <!--
                     <materialDesign:DataGridComboBoxColumn Width="100"
                                                  Header="Food with long header"
                                                  IsEditable="True"
                                                  ItemsSourceBinding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}, Path=DataContext.Foods}"
                                                  SelectedValueBinding="{Binding Food}">
-                        --><!--Setting the editing element style allows access to all of the combo box's properties
+                        -->
+                <!--Setting the editing element style allows access to all of the combo box's properties
                         <materialDesign:MaterialDataGridComboBoxColumn.EditingElementStyle>
                             <Style TargetType="ComboBox" BasedOn="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type ComboBox}, ResourceId=MaterialDataGridComboBoxColumnEditingStyle}}" >
                                 <Setter Property="IsEditable" Value="True" />
                             </Style>
                         </materialDesign:MaterialDataGridComboBoxColumn.EditingElementStyle>
-            --><!--
+            -->
+                <!--
                     </materialDesign:DataGridComboBoxColumn>-->
-                </DataGrid.Columns>
-            </DataGrid>
-        </ScrollViewer>
-    </StackPanel>
+            </DataGrid.Columns>
+        </DataGrid>
+    
 </UserControl>
 
 
