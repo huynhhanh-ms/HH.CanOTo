@@ -12,11 +12,12 @@ namespace HH.WPF.ViewModels;
 
 public class ShipmentListViewModel : ViewModelBase
 {
+    public ObservableCollection<ShipmentModel> ShipmentList { get; }
     public ShipmentListViewModel()
     {
-        Items1 = CreateData();
+        ShipmentList = CreateData();
 
-        foreach (var model in Items1)
+        foreach (var model in ShipmentList)
         {
             model.PropertyChanged += (sender, args) =>
             {
@@ -28,10 +29,16 @@ public class ShipmentListViewModel : ViewModelBase
 
     public bool AddItem()
     {
-        Items1.Add(new ShipmentModel
+        ShipmentList.Add(new ShipmentModel
         {
             Id = RandomNumberGenerator.GetInt32(0, 100),
         });
+        return true;
+    }
+
+    public bool UpdateTlXeHangOfItem(int row, int value)
+    {
+        ShipmentList[row].TlXeHang = value;
         return true;
     }
 
@@ -39,14 +46,14 @@ public class ShipmentListViewModel : ViewModelBase
     {
         get
         {
-            var selected = Items1.Select(item => item.IsSelected).Distinct().ToList();
+            var selected = ShipmentList.Select(item => item.IsSelected).Distinct().ToList();
             return selected.Count == 1 ? selected.Single() : null;
         }
         set
         {
             if (value.HasValue)
             {
-                SelectAll(value.Value, Items1);
+                SelectAll(value.Value, ShipmentList);
                 OnPropertyChanged();
             }
         }
@@ -70,25 +77,8 @@ public class ShipmentListViewModel : ViewModelBase
             new ShipmentModel(),
             new ShipmentModel(),
             new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
-            new ShipmentModel(),
-
         };
     }
 
-    public ObservableCollection<ShipmentModel> Items1 { get; }
 
 }

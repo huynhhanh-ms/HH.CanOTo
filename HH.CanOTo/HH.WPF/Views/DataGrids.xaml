@@ -30,7 +30,8 @@
                 SelectionMode="Single"
                 MouseLeftButtonDown="myDataGrid_MouseLeftButtonDown"
                 HeadersVisibility="All"
-                ItemsSource="{Binding Items1}" >
+                
+                ItemsSource="{Binding ShipmentList}" >
             <!--<DataGrid.Resources>
                     <Style TargetType="{x:Type DataGridRow}">
                         <Style.Triggers>

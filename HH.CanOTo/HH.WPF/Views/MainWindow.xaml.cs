@@ -30,12 +30,30 @@ namespace HH.WPF
 
             InitializeComponent();
             InitializeSerialPort();
+
+            DataGrids.gridview1.SelectedCellsChanged += MyDataGrid_SelectedCellsChanged;
         }
         private void Window_Closed(object sender, EventArgs e)
         {
             Application.Current.Shutdown(); // Terminate the application
         }
 
+        private void MyDataGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            // Get the positions of selected cells
+            StringBuilder positions = new StringBuilder();
+
+            foreach (DataGridCellInfo cellInfo in DataGrids.gridview1.SelectedCells)
+            {
+                int columnIndex = cellInfo.Column.DisplayIndex; // Index of the column
+                int rowIndex = DataGrids.gridview1.Items.IndexOf(cellInfo.Item); // Index of the row
+
+                positions.Append($"Column: {columnIndex + 1}, Row: {rowIndex + 1}\n");
+            }
+
+            // Display positions in the TextBox
+            positionTextBox.Text = positions.ToString();
+        }
 
 
 
@@ -88,9 +106,67 @@ namespace HH.WPF
         }
         #endregion
 
-        private void ButtonAdd_Click(object sender, RoutedEventArgs e)
+        private void ButtonThemMoi_Click(object sender, RoutedEventArgs e)
         {
             DataGrids.data.AddItem();
+            ScrollToEnd();
+        }
+
+
+
+        private void ScrollToEnd()
+        {
+            ScrollViewer scrollViewer = GetScrollViewer(DataGrids);
+            if (scrollViewer != null)
+            {
+                //scrollViewer.ScrollToVerticalOffset(scrollViewer.VerticalOffset + 50); 
+                scrollViewer.ScrollToEnd();
+            }
+        }
+        private ScrollViewer GetScrollViewer(DependencyObject control)
+        {
+            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(control); i++)
+            {
+                DependencyObject child = VisualTreeHelper.GetChild(control, i);
+                if (child is ScrollViewer)
+                {
+                    return (ScrollViewer)child;
+                }
+                else
+                {
+                    ScrollViewer result = GetScrollViewer(child);
+                    if (result != null)
+                        return result;
+                }
+            }
+            return null;
+        }
+
+        private void ButtonCanXeHang_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataGrids.gridview1.SelectedCells.Count == 0)
+            {
+                MessageBox.Show("Chưa chọn hàng cần cân");
+                return;
+            }
+            DataGridCellInfo selectedCell = DataGrids.gridview1.SelectedCells[1];
+
+            foreach(var item in DataGrids.data.ShipmentList)
+            {
+                if (item.IsSelected)
+                {
+                    Console.WriteLine();
+                }
+            }
+
+            int rowIndex = DataGrids.gridview1.Items.IndexOf(selectedCell.Item);
+            int columnIndex = selectedCell.Column.DisplayIndex;
+
+            var selectedItem = DataGrids.gridview1.Items[rowIndex];
+
+            String newValue = PortComView.Text;
+            DataGrids.data.UpdateTlXeHangOfItem(rowIndex, int.Parse(newValue));
+            //DataGrids.gridview1.Items.Refresh();
         }
     }
 }

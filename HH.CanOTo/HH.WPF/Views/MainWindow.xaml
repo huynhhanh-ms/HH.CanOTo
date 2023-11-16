@@ -34,7 +34,7 @@
                         </materialDesign:Card>
 
                         <!-- Xe + Hang -->
-                        <Button Margin="10" Width="150px" Height="75px">
+                        <Button Margin="10" Width="150px" Height="75px" Click="ButtonCanXeHang_Click">
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="TruckMinus" Foreground="White" Height="25px" Width="25px"/>
                                 <TextBlock Text=" Xe+Hàng" Foreground="White" FontSize="20px"/>
@@ -59,7 +59,7 @@
                         </Button>
 
                         <!-- Them Moi -->
-                        <Button Margin="10" Width="175px" Height="75px" Click="ButtonAdd_Click">
+                        <Button Margin="10" Width="175px" Height="75px" Click="ButtonThemMoi_Click">
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="PlusBoxMultiple" Foreground="White" Height="25px" Width="25px"/>
                                 <TextBlock Text=" Thêm Mới" Foreground="White" FontSize="20px"/>
@@ -101,6 +101,9 @@
   IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
   Style="{StaticResource MaterialDesignPaperLightButton}"
   ToolTip="Resource name: MaterialDesignPaperLightButton" />
+
+                        <TextBox x:Name="positionTextBox" Text="Cell Position" IsReadOnly="True" VerticalAlignment="Top" Margin="10" />
+
 
                     </StackPanel>
 

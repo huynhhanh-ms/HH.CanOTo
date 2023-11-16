@@ -33,11 +33,7 @@ namespace HH.WPF
             DataGridCell cell = sender as DataGridCell;
             if (cell != null)
             {
-                // Get the new value from the cell and update the data source
                 var editedValue = (cell.Content as TextBlock).Text;
-                // Use the data to update your data source, e.g., ObservableCollection
-                // myDataGrid.ItemsSource is the data source of the DataGrid
-                // Perform the data update here
             }
         }
 
