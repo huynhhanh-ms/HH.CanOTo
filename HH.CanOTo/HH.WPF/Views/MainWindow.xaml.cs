@@ -87,7 +87,7 @@ namespace HH.WPF
         }
         private void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            UpdateUI(SerialPortReader.String2Num(serialPort.ReadExisting()));
+            UpdateUI((serialPort.ReadExisting()));
         }
 
         private void UpdateUI(string data)
@@ -95,7 +95,8 @@ namespace HH.WPF
             // Use a Dispatcher to update the UI from a different thread (since DataReceived event runs on a separate thread)
             Dispatcher.Invoke(() =>
             {
-                PortComView.Text = data;
+                PortComView.Text = SerialPortReader.String2Num(data);
+                PortComViewRaw.Text = "Com Raw : " + data;
             });
         }
 
@@ -141,6 +142,32 @@ namespace HH.WPF
             }
             return null;
         }
+        private void ButtonCanXe_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataGrids.gridview1.SelectedCells.Count == 0)
+            {
+                MessageBox.Show("Chưa chọn hàng cần cân");
+                return;
+            }
+            DataGridCellInfo selectedCell = DataGrids.gridview1.SelectedCells[0];
+
+            foreach(var item in DataGrids.data.ShipmentList)
+            {
+                if (item.IsSelected)
+                {
+                    Console.WriteLine();
+                }
+            }
+
+            int rowIndex = DataGrids.gridview1.Items.IndexOf(selectedCell.Item);
+            int columnIndex = selectedCell.Column.DisplayIndex;
+
+            var selectedItem = DataGrids.gridview1.Items[rowIndex];
+
+            String newValue = PortComView.Text;
+            DataGrids.data.UpdateTlXeOfItem(rowIndex, int.Parse(newValue));
+            //DataGrids.gridview1.Items.Refresh();
+        }
 
         private void ButtonCanXeHang_Click(object sender, RoutedEventArgs e)
         {
@@ -149,7 +176,7 @@ namespace HH.WPF
                 MessageBox.Show("Chưa chọn hàng cần cân");
                 return;
             }
-            DataGridCellInfo selectedCell = DataGrids.gridview1.SelectedCells[1];
+            DataGridCellInfo selectedCell = DataGrids.gridview1.SelectedCells[0];
 
             foreach(var item in DataGrids.data.ShipmentList)
             {

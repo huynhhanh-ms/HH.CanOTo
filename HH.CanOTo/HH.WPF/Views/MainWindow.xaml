@@ -42,7 +42,7 @@
                             </StackPanel>
                         </Button>
                         <!-- Xac Xe -->
-                        <Button Margin="10" Width="150px" Height="75px">
+                        <Button Margin="10" Width="150px" Height="75px" Click="ButtonCanXe_Click">
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="CarPickup" Foreground="White" Height="25px" Width="25px"/>
                                 <TextBlock Text=" Xác Xe" Foreground="White" FontSize="20px"/>
@@ -103,6 +103,7 @@
   ToolTip="Resource name: MaterialDesignPaperLightButton" />
 
                         <TextBox x:Name="positionTextBox" Text="Cell Position" IsReadOnly="True" VerticalAlignment="Top" Margin="10" />
+                        <TextBox x:Name="PortComViewRaw" Text="Com Raw : " IsReadOnly="True" VerticalAlignment="Top" Margin="10" />
 
 
                     </StackPanel>
