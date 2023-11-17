@@ -10,6 +10,11 @@ The important point is to connect with COM1 PORT to get data from the electronic
 - Weigh vehicles
 - Save data
 - Print weighing slip
+    - Using ReportViewerCore.WinForms Packages insteads of Packages release by Microsoft (bug with .NET Core).
+    - add `xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms"`
+    - Create rv:ReportViewer in xaml file
+    - ` reportViewer.LocalReport.ReportPath = reportPath; `
+    - ` reportViewer.RefreshReport(); `
 - Review history
 - Search by date, keyword.
 
