@@ -201,7 +201,8 @@ namespace HH.WPF
         {
             //open Printer window
             PrinterWindow printerWindow = new PrinterWindow();
-            printerWindow.Show();
+            printerWindow.Owner = this;
+            printerWindow.ShowDialog();
         }
     }
 }

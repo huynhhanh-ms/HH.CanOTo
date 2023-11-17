@@ -1,6 +1,7 @@
 ﻿using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -40,6 +41,21 @@ namespace HH.WPF.Views
                 // reportViewer.LocalReport.DataSources.Add(...); // Thêm DataSource nếu cần
 
 
+                reportViewer.SetPageSettings(new PageSettings
+                {
+                    //papersize of A4
+                    PaperSize = new PaperSize("A4", 827, 1169),
+                    PrinterResolution = new PrinterResolution
+                    {
+                        X = 300,
+                        Y = 300,
+                        Kind = PrinterResolutionKind.Custom
+                    },
+                    // Adjust margins (in hundredths of an inch)
+                    Margins = new System.Drawing.Printing.Margins(0,0,0,0) // Left, Right, Top, Bottom
+                    
+                });
+                reportViewer.ZoomMode = ZoomMode.PageWidth;
                 // Hiển thị báo cáo trong ReportViewer
                 reportViewer.RefreshReport();
             }

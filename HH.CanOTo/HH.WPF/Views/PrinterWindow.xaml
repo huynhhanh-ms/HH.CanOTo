@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms" 
         mc:Ignorable="d"
-        Title="Printer" Height="450" Width="800">
+        Title="Printer" Height="584" Width="827">
     <Grid>
         <!-- Phần của giao diện bạn muốn in -->
         <WindowsFormsHost>
