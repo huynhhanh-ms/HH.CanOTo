@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO.Ports;
 using HH.WPF.Util;
+using HH.WPF.Views;
 
 namespace HH.WPF
 {
@@ -194,6 +195,13 @@ namespace HH.WPF
             String newValue = PortComView.Text;
             DataGrids.data.UpdateTlXeHangOfItem(rowIndex, int.Parse(newValue));
             //DataGrids.gridview1.Items.Refresh();
+        }
+
+        private void ButtonInPhieuCan_Click(object sender, RoutedEventArgs e)
+        {
+            //open Printer window
+            PrinterWindow printerWindow = new PrinterWindow();
+            printerWindow.Show();
         }
     }
 }

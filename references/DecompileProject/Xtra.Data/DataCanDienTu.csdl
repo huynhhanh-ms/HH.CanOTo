@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CanDienTuModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="CanDienTuEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="HangHoa" EntityType="CanDienTuModel.HangHoa" />
+    <EntitySet Name="KhachHang" EntityType="CanDienTuModel.KhachHang" />
+    <EntitySet Name="PassWord" EntityType="CanDienTuModel.PassWord" />
+    <EntitySet Name="XeHang" EntityType="CanDienTuModel.XeHang" />
+    <AssociationSet Name="FK_HangHoaXeHang" Association="CanDienTuModel.FK_HangHoaXeHang">
+      <End Role="HangHoa" EntitySet="HangHoa" />
+      <End Role="XeHang" EntitySet="XeHang" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="HangHoa">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Guid" Name="Id" Nullable="false" />
+    <Property Type="String" Name="MaSo" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Ten" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DonVi" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SapXep" Nullable="false" />
+    <NavigationProperty Name="XeHang" Relationship="CanDienTuModel.FK_HangHoaXeHang" FromRole="HangHoa" ToRole="XeHang" />
+  </EntityType>
+  <EntityType Name="KhachHang">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Guid" Name="Id" Nullable="false" />
+    <Property Type="String" Name="MaSo" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Ten" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DiaChi" MaxLength="4000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PassWord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Guid" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Ten" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="XeHang">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Guid" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="SoChungTu" Nullable="false" />
+    <Property Type="String" Name="SoXe" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="TLXeHang" Nullable="false" />
+    <Property Type="Double" Name="TLXe" Nullable="false" />
+    <Property Type="Double" Name="TapChat" Nullable="false" />
+    <Property Type="Int32" Name="SoBao" Nullable="false" />
+    <Property Type="Double" Name="TLHang" Nullable="false" />
+    <Property Type="Double" Name="TLTapChat" Nullable="false" />
+    <Property Type="Double" Name="TLBao" Nullable="false" />
+    <Property Type="Double" Name="TLTruBi" Nullable="false" />
+    <Property Type="Double" Name="TLSach" Nullable="false" />
+    <Property Type="Int32" Name="Gia30" />
+    <Property Type="DateTime" Name="Ngay" />
+    <Property Type="DateTime" Name="GioXeHang" />
+    <Property Type="DateTime" Name="GioXe" />
+    <Property Type="Guid" Name="HangHoaID" Nullable="false" />
+    <Property Type="Double" Name="GiaMua" Nullable="false" />
+    <Property Type="String" Name="DiaChi" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TenKH" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Type="Guid" Name="KhachHangID" Nullable="false" />
+    <Property Type="String" Name="GhiChu" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HangHoa" Relationship="CanDienTuModel.FK_HangHoaXeHang" FromRole="XeHang" ToRole="HangHoa" />
+  </EntityType>
+  <Association Name="FK_HangHoaXeHang">
+    <End Type="CanDienTuModel.HangHoa" Role="HangHoa" Multiplicity="1" />
+    <End Type="CanDienTuModel.XeHang" Role="XeHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HangHoa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="XeHang">
+        <PropertyRef Name="HangHoaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

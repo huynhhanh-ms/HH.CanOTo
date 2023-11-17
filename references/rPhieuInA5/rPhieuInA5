@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PreviewSerializer version="14.1.4.0">
+  <Options Name="rPhieuInA5" PageCount="1" PageBackColor="White">
+    <PageData>
+      <Item1 PageIndices="0" MarginsF="144,9,0,0" MinMarginsF="0,0,0,0" PaperKind="A4" Size="827,1169" />
+    </PageData>
+    <SharedStyles>
+      <Item1 BorderStyle="Inset" Padding="5,5,0,0,254" Font="Times New Roman, 13pt" ForeColor="Black" BackColor="Transparent" BorderColor="Black" BorderDashStyle="Solid" Sides="None" StringFormat="Near;Center;FitBlackBox, LineLimit, NoClip;None;Character;GenericTypographic" TextAlignment="MiddleLeft" BorderWidthSerializable="1" Index="1" />
+      <Item2 BorderStyle="Inset" Padding="5,5,0,0,254" Font="Times New Roman, 13pt" ForeColor="Black" BackColor="Transparent" BorderColor="Black" BorderDashStyle="Dot" Sides="None" StringFormat="Near;Center;FitBlackBox, LineLimit, NoClip;None;Character;GenericTypographic" TextAlignment="MiddleLeft" BorderWidthSerializable="1" Index="3" />
+      <Item3 BorderStyle="Inset" Padding="5,5,0,0,254" Font="Times New Roman, 13pt" ForeColor="Black" BackColor="Transparent" BorderColor="Black" BorderDashStyle="Dot" Sides="None" StringFormat="Far;Center;FitBlackBox, LineLimit, NoClip;None;Character;GenericTypographic" TextAlignment="MiddleRight" BorderWidthSerializable="1" Index="5" />
+      <Item4 BorderStyle="Inset" Padding="5,5,0,0,254" Font="Times New Roman, 13pt" ForeColor="Black" BackColor="Transparent" BorderColor="Black" BorderDashStyle="Solid" Sides="None" StringFormat="Near;Center;FitBlackBox, LineLimit, NoClip;None;Character;GenericTypographic" TextAlignment="MiddleJustify" BorderWidthSerializable="1" Index="4" />
+      <Item5 BorderStyle="Inset" Padding="5,5,0,0,254" Font="Times New Roman, 13pt" ForeColor="Black" BackColor="Transparent" BorderColor="Black" BorderDashStyle="Solid" Sides="None" StringFormat="Near;Near;FitBlackBox, LineLimit, NoClip;None;Character;GenericTypographic" TextAlignment="TopLeft" BorderWidthSerializable="1" Index="6" />
+    </SharedStyles>
+    <RootBookmark Text="rPhieuInA5" />
+  </Options>
+  <Page1 Rect="0,0,2328,3507">
+    <InnerBricks>
+      <Item1 Rect="144,0,2328,3507">
+        <InnerBricks>
+          <Item1 BrickType="Label" TextValue_type="System.String" TextValue="CÔNG TY TNHH TM DV HUYNH HẠNH - " Text="CÔNG TY TNHH TM DV HUYNH HẠNH - " Rect="0,1542.77844,2191.565,69.00005" Index="0">
+            <Style BorderStyle="Inset" Padding="5,5,0,0,254" Font="Times New Roman, 12pt" ForeColor="Black" BackColor="Transparent" BorderColor="Black" BorderDashStyle="Solid" Sides="None" StringFormat="Center;Center;FitBlackBox, LineLimit, NoClip;None;Character;GenericTypographic" TextAlignment="MiddleCenter" BorderWidthSerializable="1" Index="0" />
+          </Item1>
+          <Item2 BrickType="Label" TextValue_type="System.String" TextValue="ĐC: Thăng Qúy-Vụ Bổn-Krông Păc-Đăk Lăk" Text="ĐC: Thăng Qúy-Vụ Bổn-Krông Păc-Đăk Lăk" Style="1" Rect="87.5002,165.532684,1081.25,100.249939" Index="1" />
+          <Item3 BrickType="Label" TextValue_type="System.String" TextValue="CÔNG TY TNHH HUYNH HẠNH" Text="CÔNG TY TNHH HUYNH HẠNH" Rect="87.5000153,50.9076157,1081.25012,114.625069" Index="2">
+            <Style BorderStyle="Inset" Padding="5,5,0,0,254" Font="Times New Roman, 15pt, style=Bold" ForeColor="Black" BackColor="Transparent" BorderColor="Black" BorderDashStyle="Solid" Sides="None" StringFormat="Near;Center;FitBlackBox, LineLimit, NoClip;None;Character;GenericTypographic" TextAlignment="MiddleLeft" BorderWidthSerializable="1" Index="2" />
+          </Item3>
+          <Item4 BrickType="Label" TextValue_type="System.String" TextValue="ĐT: 05003525647" Text="ĐT: 05003525647" Style="1" Rect="87.5002,265.782623,1081.25,125.250145" Index="3" />
+          <Item5 BrickType="Label" TextValue_type="System.String" TextValue="" Style="3" Rect="1725.93774,901.126648,465.625977,68.99991" Index="4" />
+          <Item6 BrickType="Label" Text="Trọng Lượng Xe" Style="4" Rect="122.812325,829.46106,629.3747,68.99991" Index="5" />
+          <Item7 BrickType="Label" TextValue_type="System.Int32" TextValue="272" Text="272" Style="3" Rect="519.3117,542.863,755.0003,76.4999161" Index="6" />
+          <Item8 BrickType="Label" Style="3" Rect="519.3117,619.363,755.000549,68.99998" Index="7" />
+          <Item9 BrickType="Label" Text="Số Phiếu" Style="1" Rect="122.812325,542.863,346.874451,76.4999161" Index="8" />
+          <Item10 BrickType="Label" TextValue_type="System.Double" TextValue="16590" Text="16590" Style="5" Rect="810.062256,829.399841,336.250244,69.00005" Index="9" />
+          <Item11 BrickType="Label" Text="Kg" Style="1" Rect="1146.31226,901.126648,125,68.99991" Index="10" />
+          <Item12 BrickType="Label" Text="NV Bảo Vệ" Style="6" Rect="810.062256,1190.693,375.000244,68.99998" Index="11" />
+          <Item13 BrickType="Label" TextValue_type="System.Double" TextValue="0" Text="0" Style="5" Rect="810.062256,901.126648,336.250244,68.99991" Index="12" />
+          <Item14 BrickType="Label" Text="Kg" Style="1" Rect="1146.31226,829.399841,125,69.00005" Index="13" />
+          <Item15 BrickType="Label" Text="Trọng Lượng Hàng" Style="4" Rect="122.812325,899.87915,629.3745,68.99991" Index="14" />
+          <Item16 BrickType="Label" TextValue_type="System.String" TextValue="Hang Hoa" Text="Hang Hoa" Style="3" Rect="1725.93774,542.863,465.626221,68.99995" Index="15" />
+          <Item17 BrickType="Label" Text="Loại Hàng&#xD;&#xA;" Style="1" Rect="1391.56177,542.863,287.5017,69.6850357" Index="16" />
+          <Item18 BrickType="Label" Text="Trọng Lượng Xe Và Hàng&#xD;&#xA;" Style="4" Rect="122.812325,759.7148,629.3747,69.6850357" Index="17" />
+          <Item19 BrickType="Label" Text="PHIẾU CÂN XE&#xD;&#xA;" Rect="749.437439,406.032623,900.0003,107.205154" Index="18">
+            <Style BorderStyle="Inset" Padding="5,5,0,0,254" Font="Times New Roman, 17pt, style=Bold" ForeColor="Black" BackColor="Transparent" BorderColor="Black" BorderDashStyle="Solid" Sides="None" StringFormat="Center;Center;FitBlackBox, LineLimit, NoClip;None;Character;GenericTypographic" TextAlignment="MiddleCenter" BorderWidthSerializable="1" Index="7" />
+          </Item19>
+          <Item20 BrickType="Label" Text="Ngày Cân&#xD;&#xA;" Style="1" Rect="1388.43652,689.0478,290.6261,69.6850357" Index="19" />
+          <Item21 BrickType="Label" TextValue_type="System.String" TextValue="(Ngày 25 Tháng 4 Năm 2020)" Text="(Ngày 25 Tháng 4 Năm 2020)" Rect="1243.81177,1074.81763,846.874756,68.99998" Index="20">
+            <Style BorderStyle="Inset" Padding="5,5,0,0,254" Font="Times New Roman, 13pt" ForeColor="Black" BackColor="Transparent" BorderColor="Black" BorderDashStyle="Solid" Sides="None" StringFormat="Center;Center;FitBlackBox, LineLimit, NoClip;None;Character;GenericTypographic" TextAlignment="MiddleCenter" BorderWidthSerializable="1" Index="8" />
+          </Item21>
+          <Item22 BrickType="Label" Text="Số Xe" Style="1" Rect="122.812325,690.7147,346.874451,69.00005" Index="21" />
+          <Item23 BrickType="Label" TextValue_type="System.Double" TextValue="0" Text="0" Style="5" Rect="810.062256,758.732849,336.250244,69.00005" Index="22" />
+          <Item24 BrickType="Label" Text="Kg" Style="1" Rect="1146.31226,758.732849,125,69.00005" Index="23" />
+          <Item25 BrickType="Label" TextValue_type="System.String" TextValue="37c 20267" Text="37c 20267" Style="3" Rect="519.3117,689.0478,755.0003,68.99998" Index="24" />
+          <Item26 BrickType="Label" Text="Nhập/Xuất&#xD;&#xA;" Style="1" Rect="1391.56177,901.126648,275,69.6850357" Index="25" />
+          <Item27 BrickType="Label" Text="Người Cân" Style="6" Rect="1563.81384,1190.693,375.000244,68.99998" Index="26" />
+          <Item28 BrickType="Label" Text=":" Style="1" Rect="758.1869,901.126648,46.87451,67.75234" Index="27" />
+          <Item29 BrickType="Label" Text=":" Style="1" Rect="1679.06348,970.8117,46.87451,67.7522659" Index="28" />
+          <Item30 BrickType="Label" Text=":" Style="1" Rect="758.1869,820.591248,46.8745728,76.49988" Index="29" />
+          <Item31 BrickType="Label" Text=":" Style="1" Rect="478.6865,683.2149,46.8745422,76.49988" Index="30" />
+          <Item32 BrickType="Label" Text=":" Style="1" Rect="758.1869,759.7148,46.8745728,76.49988" Index="31" />
+          <Item33 BrickType="Label" Text=":" Style="1" Rect="1679.06348,542.863,46.8746338,76.4999161" Index="32" />
+          <Item34 BrickType="Label" Text=":" Style="1" Rect="1679.06348,820.5909,46.8746338,76.49988" Index="33" />
+          <Item35 BrickType="Label" Text=":" Style="1" Rect="1679.06348,892.2567,46.8746338,76.49981" Index="34" />
+          <Item36 BrickType="Label" Text=":" Style="1" Rect="1679.06348,758.732849,46.8746338,76.49988" Index="35" />
+          <Item37 BrickType="Label" Text=":" Style="1" Rect="1679.06213,612.548,46.8747559,76.49988" Index="36" />
+          <Item38 BrickType="Label" Text=":" Style="1" Rect="1679.06348,689.0478,46.8746338,76.49988" Index="37" />
+          <Item39 BrickType="Label" Text=":" Style="1" Rect="478.6865,612.548,46.8745422,76.49988" Index="38" />
+          <Item40 BrickType="Label" Text="Giờ Cân 2&#xD;&#xA;" Style="1" Rect="1391.56067,829.399841,287.501953,69.6850357" Index="39" />
+          <Item41 BrickType="Label" TextValueFormatString="{0:HH:mm:ss}" Style="3" Rect="1725.93774,758.732849,465.625977,69.00005" Index="40" />
+          <Item42 BrickType="Label" Text="Giờ Cân 1&#xD;&#xA;" Style="1" Rect="1391.56067,758.732849,287.501953,69.6850357" Index="41" />
+          <Item43 BrickType="Label" Text="Ghi Chú" Style="1" Rect="1391.56177,970.8117,265.625,69.00005" Index="42" />
+          <Item44 BrickType="Label" Style="3" Rect="1725.93774,968.8788,465.626221,68.99983" Index="43" />
+          <Item45 BrickType="Label" TextValue_type="System.DateTime" TextValue="04/25/2020 06:45:14" TextValueFormatString="{0:HH:mm:ss}" Text="06:45:14" Style="3" Rect="1725.93774,829.399841,465.625977,69.00005" Index="44" />
+          <Item46 BrickType="Label" Text="Khách Hàng" Style="1" Rect="122.812325,612.548,346.874451,76.49988" Index="45" />
+          <Item47 BrickType="Label" Text=":" Style="1" Rect="478.6865,542.863,46.8745422,76.4999161" Index="46" />
+          <Item48 BrickType="Label" Text="Khách Hàng" Style="6" Rect="169.686844,1190.693,299.999878,68.99998" Index="47" />
+          <Item49 BrickType="Label" Text="Kho" Style="1" Rect="1391.56177,612.548,240.625,68.99998" Index="48" />
+          <Item50 BrickType="Label" TextValue_type="System.DateTime" TextValue="04/25/2020 06:43:12" TextValueFormatString="{0:dd/MM/yyyy}" Text="25/04/2020" Style="6" Rect="1725.93774,689.0478,465.625977,68.99998" Index="49" />
+          <Item51 BrickType="Label" Text=":" Style="1" Rect="758.1868,970.81134,46.87451,67.75234" Index="50" />
+          <Item52 BrickType="Label" Text="Trọng Lượng TT" Style="4" Rect="122.812325,968.8788,629.3745,68.99998" Index="51" />
+          <Item53 BrickType="Label" Text="Kg" Style="1" Rect="1146.31213,970.81134,125,68.99991" Index="52" />
+          <Item54 BrickType="Label" TextValue_type="System.Double" TextValue="0" Text="0" Style="5" Rect="810.062256,970.81134,336.250244,68.99991" Index="53" />
+        </InnerBricks>
+      </Item1>
+    </InnerBricks>
+  </Page1>
+  <ContinuousExportInfo PageMargins="48, 3, 0, 0" PageBounds="0,0,827,1169">
+    <Bricks>
+      <Item1 Brick="0" Rect="0,1542.7784423828125,2191.56494140625,69.000053405761719" />
+      <Item2 Brick="1" Rect="87.500198364257812,165.53268432617188,1081.25,100.24993896484375" />
+      <Item3 Brick="2" Rect="87.500015258789062,50.907615661621094,1081.2501220703125,114.62506866455078" />
+      <Item4 Brick="3" Rect="87.500198364257812,265.78262329101562,1081.25,125.25014495849609" />
+      <Item5 Brick="4" Rect="1725.937744140625,901.12664794921875,465.6259765625,68.999908447265625" />
+      <Item6 Brick="5" Rect="122.81232452392578,829.4610595703125,629.37469482421875,68.999908447265625" />
+      <Item7 Brick="6" Rect="519.31170654296875,542.86297607421875,755.00030517578125,76.499916076660156" />
+      <Item8 Brick="7" Rect="519.31170654296875,619.36297607421875,755.00054931640625,68.9999771118164" />
+      <Item9 Brick="8" Rect="122.81232452392578,542.86297607421875,346.87445068359375,76.499916076660156" />
+      <Item10 Brick="9" Rect="810.062255859375,829.39984130859375,336.250244140625,69.000053405761719" />
+      <Item11 Brick="10" Rect="1146.312255859375,901.12664794921875,125,68.999908447265625" />
+      <Item12 Brick="11" Rect="810.062255859375,1190.6929931640625,375.000244140625,68.9999771118164" />
+      <Item13 Brick="12" Rect="810.062255859375,901.12664794921875,336.250244140625,68.999908447265625" />
+      <Item14 Brick="13" Rect="1146.312255859375,829.39984130859375,125,69.000053405761719" />
+      <Item15 Brick="14" Rect="122.81232452392578,899.879150390625,629.37451171875,68.999908447265625" />
+      <Item16 Brick="15" Rect="1725.937744140625,542.86297607421875,465.626220703125,68.999946594238281" />
+      <Item17 Brick="16" Rect="1391.561767578125,542.86297607421875,287.501708984375,69.6850357055664" />
+      <Item18 Brick="17" Rect="122.81232452392578,759.71478271484375,629.37469482421875,69.6850357055664" />
+      <Item19 Brick="18" Rect="749.43743896484375,406.03262329101562,900.00030517578125,107.20515441894531" />
+      <Item20 Brick="19" Rect="1388.4365234375,689.04779052734375,290.6260986328125,69.6850357055664" />
+      <Item21 Brick="20" Rect="1243.811767578125,1074.817626953125,846.874755859375,68.9999771118164" />
+      <Item22 Brick="21" Rect="122.81232452392578,690.7147216796875,346.87445068359375,69.000053405761719" />
+      <Item23 Brick="22" Rect="810.062255859375,758.73284912109375,336.250244140625,69.000053405761719" />
+      <Item24 Brick="23" Rect="1146.312255859375,758.73284912109375,125,69.000053405761719" />
+      <Item25 Brick="24" Rect="519.31170654296875,689.04779052734375,755.00030517578125,68.9999771118164" />
+      <Item26 Brick="25" Rect="1391.561767578125,901.12664794921875,275,69.6850357055664" />
+      <Item27 Brick="26" Rect="1563.8138427734375,1190.6929931640625,375.000244140625,68.9999771118164" />
+      <Item28 Brick="27" Rect="758.1868896484375,901.12664794921875,46.87451171875,67.7523422241211" />
+      <Item29 Brick="28" Rect="1679.0634765625,970.81170654296875,46.87451171875,67.752265930175781" />
+      <Item30 Brick="29" Rect="758.1868896484375,820.59124755859375,46.87457275390625,76.4998779296875" />
+      <Item31 Brick="30" Rect="478.68649291992188,683.21490478515625,46.874542236328125,76.4998779296875" />
+      <Item32 Brick="31" Rect="758.1868896484375,759.71478271484375,46.87457275390625,76.4998779296875" />
+      <Item33 Brick="32" Rect="1679.0634765625,542.86297607421875,46.8746337890625,76.499916076660156" />
+      <Item34 Brick="33" Rect="1679.0634765625,820.59088134765625,46.8746337890625,76.4998779296875" />
+      <Item35 Brick="34" Rect="1679.0634765625,892.2567138671875,46.8746337890625,76.499809265136719" />
+      <Item36 Brick="35" Rect="1679.0634765625,758.73284912109375,46.8746337890625,76.4998779296875" />
+      <Item37 Brick="36" Rect="1679.0621337890625,612.5479736328125,46.874755859375,76.4998779296875" />
+      <Item38 Brick="37" Rect="1679.0634765625,689.04779052734375,46.8746337890625,76.4998779296875" />
+      <Item39 Brick="38" Rect="478.68649291992188,612.5479736328125,46.874542236328125,76.4998779296875" />
+      <Item40 Brick="39" Rect="1391.5606689453125,829.39984130859375,287.501953125,69.6850357055664" />
+      <Item41 Brick="40" Rect="1725.937744140625,758.73284912109375,465.6259765625,69.000053405761719" />
+      <Item42 Brick="41" Rect="1391.5606689453125,758.73284912109375,287.501953125,69.6850357055664" />
+      <Item43 Brick="42" Rect="1391.561767578125,970.81170654296875,265.625,69.000053405761719" />
+      <Item44 Brick="43" Rect="1725.937744140625,968.8787841796875,465.626220703125,68.999832153320312" />
+      <Item45 Brick="44" Rect="1725.937744140625,829.39984130859375,465.6259765625,69.000053405761719" />
+      <Item46 Brick="45" Rect="122.81232452392578,612.5479736328125,346.87445068359375,76.4998779296875" />
+      <Item47 Brick="46" Rect="478.68649291992188,542.86297607421875,46.874542236328125,76.499916076660156" />
+      <Item48 Brick="47" Rect="169.68684387207031,1190.6929931640625,299.9998779296875,68.9999771118164" />
+      <Item49 Brick="48" Rect="1391.561767578125,612.5479736328125,240.625,68.9999771118164" />
+      <Item50 Brick="49" Rect="1725.937744140625,689.04779052734375,465.6259765625,68.9999771118164" />
+      <Item51 Brick="50" Rect="758.18682861328125,970.81134033203125,46.87451171875,67.7523422241211" />
+      <Item52 Brick="51" Rect="122.81232452392578,968.8787841796875,629.37451171875,68.9999771118164" />
+      <Item53 Brick="52" Rect="1146.3121337890625,970.81134033203125,125,68.999908447265625" />
+      <Item54 Brick="53" Rect="810.062255859375,970.81134033203125,336.250244140625,68.999908447265625" />
+    </Bricks>
+  </ContinuousExportInfo>
+</PreviewSerializer>

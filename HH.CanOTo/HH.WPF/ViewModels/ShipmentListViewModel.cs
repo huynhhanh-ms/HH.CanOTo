@@ -38,6 +38,8 @@ public class ShipmentListViewModel : ViewModelBase
 
     public bool UpdateTlXeHangOfItem(int row, int value)
     {
+        if (value == 0) return false;
+
         var item = ShipmentList[row];
         item.TlXeHang = value;
         item.NgayCan = DateTime.Now;
@@ -59,6 +61,8 @@ public class ShipmentListViewModel : ViewModelBase
     }
     public bool UpdateTlXeOfItem(int row, int value)
     {
+        if (value == 0) return false;
+
         var item = ShipmentList[row];
         item.TlXe = value;
         item.GioCanXe = DateTime.Now;

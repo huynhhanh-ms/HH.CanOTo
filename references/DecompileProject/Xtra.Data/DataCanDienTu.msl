@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CanDienTuModelStoreContainer" CdmEntityContainer="CanDienTuEntities">
+    <EntitySetMapping Name="HangHoa">
+      <EntityTypeMapping TypeName="CanDienTuModel.HangHoa">
+        <MappingFragment StoreEntitySet="HangHoa">
+          <ScalarProperty Name="SapXep" ColumnName="SapXep" />
+          <ScalarProperty Name="DonVi" ColumnName="DonVi" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="MaSo" ColumnName="MaSo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KhachHang">
+      <EntityTypeMapping TypeName="CanDienTuModel.KhachHang">
+        <MappingFragment StoreEntitySet="KhachHang">
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="MaSo" ColumnName="MaSo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PassWord">
+      <EntityTypeMapping TypeName="CanDienTuModel.PassWord">
+        <MappingFragment StoreEntitySet="PassWord">
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XeHang">
+      <EntityTypeMapping TypeName="CanDienTuModel.XeHang">
+        <MappingFragment StoreEntitySet="XeHang">
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+          <ScalarProperty Name="KhachHangID" ColumnName="KhachHangID" />
+          <ScalarProperty Name="TenKH" ColumnName="TenKH" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="GiaMua" ColumnName="GiaMua" />
+          <ScalarProperty Name="HangHoaID" ColumnName="HangHoaID" />
+          <ScalarProperty Name="GioXe" ColumnName="GioXe" />
+          <ScalarProperty Name="GioXeHang" ColumnName="GioXeHang" />
+          <ScalarProperty Name="Ngay" ColumnName="Ngay" />
+          <ScalarProperty Name="Gia30" ColumnName="Gia30" />
+          <ScalarProperty Name="TLSach" ColumnName="TLSach" />
+          <ScalarProperty Name="TLTruBi" ColumnName="TLTruBi" />
+          <ScalarProperty Name="TLBao" ColumnName="TLBao" />
+          <ScalarProperty Name="TLTapChat" ColumnName="TLTapChat" />
+          <ScalarProperty Name="TLHang" ColumnName="TLHang" />
+          <ScalarProperty Name="SoBao" ColumnName="SoBao" />
+          <ScalarProperty Name="TapChat" ColumnName="TapChat" />
+          <ScalarProperty Name="TLXe" ColumnName="TLXe" />
+          <ScalarProperty Name="TLXeHang" ColumnName="TLXeHang" />
+          <ScalarProperty Name="SoXe" ColumnName="SoXe" />
+          <ScalarProperty Name="SoChungTu" ColumnName="SoChungTu" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

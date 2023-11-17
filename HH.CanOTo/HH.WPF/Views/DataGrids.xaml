@@ -25,7 +25,10 @@
         <!--<FrameworkElement x:Name="DataContextProxy" DataContext="{Binding}" Height="0" />-->
         <DataGrid Name="gridview1" AutoGenerateColumns="False"
             GridLinesVisibility="All"
-                CanUserAddRows="False"
+            LoadingRow="gridview1_LoadingRow"
+            KeyUp="gridview1_KeyUp"
+            CanUserSortColumns="False"
+            CanUserAddRows="False"
                 CellEditEnding="gridview1_CellEditEnding"
                 SelectionMode="Single"
                 MouseLeftButtonDown="myDataGrid_MouseLeftButtonDown"
@@ -67,14 +70,9 @@
                 <!--Tên Khách Hàng-->
                 <DataGridTextColumn
                               EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
-                              Header="Tên Khách Hàng">
-                    <DataGridTextColumn.Binding>
-                        <Binding Path="TenKhachHang">
-                            <Binding.ValidationRules>
-                                <ViewModels:NotEmptyValidationRule />
-                            </Binding.ValidationRules>
-                        </Binding>
-                    </DataGridTextColumn.Binding>
+                              Header="Tên Khách Hàng"
+                    Binding="{Binding TenKhachHang}"
+                    >
                 </DataGridTextColumn>
 
                 <!--Địa Chỉ-->

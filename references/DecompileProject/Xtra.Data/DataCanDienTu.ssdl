@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CanDienTuModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.3.5" ProviderManifestToken="3.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="CanDienTuModelStoreContainer">
+    <EntitySet Name="HangHoa" EntityType="CanDienTuModel.Store.HangHoa" store:Type="Tables" />
+    <EntitySet Name="KhachHang" EntityType="CanDienTuModel.Store.KhachHang" store:Type="Tables" />
+    <EntitySet Name="PassWord" EntityType="CanDienTuModel.Store.PassWord" store:Type="Tables" />
+    <EntitySet Name="XeHang" EntityType="CanDienTuModel.Store.XeHang" store:Type="Tables" />
+    <AssociationSet Name="FK_HangHoaXeHang" Association="CanDienTuModel.Store.FK_HangHoaXeHang">
+      <End Role="HangHoa" EntitySet="HangHoa" />
+      <End Role="XeHang" EntitySet="XeHang" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="HangHoa">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="MaSo" Type="nvarchar" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" Nullable="false" />
+    <Property Name="DonVi" Type="nvarchar" />
+    <Property Name="SapXep" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KhachHang">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="MaSo" Type="nvarchar" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" Nullable="false" />
+    <Property Name="DiaChi" Type="nvarchar" />
+  </EntityType>
+  <EntityType Name="PassWord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" Nullable="false" />
+  </EntityType>
+  <EntityType Name="XeHang">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SoChungTu" Type="int" Nullable="false" />
+    <Property Name="SoXe" Type="nvarchar" MaxLength="200" />
+    <Property Name="TLXeHang" Type="float" Nullable="false" />
+    <Property Name="TLXe" Type="float" Nullable="false" />
+    <Property Name="TapChat" Type="float" Nullable="false" />
+    <Property Name="SoBao" Type="int" Nullable="false" />
+    <Property Name="TLHang" Type="float" Nullable="false" />
+    <Property Name="TLTapChat" Type="float" Nullable="false" />
+    <Property Name="TLBao" Type="float" Nullable="false" />
+    <Property Name="TLTruBi" Type="float" Nullable="false" />
+    <Property Name="TLSach" Type="float" Nullable="false" />
+    <Property Name="Gia30" Type="int" />
+    <Property Name="Ngay" Type="datetime" />
+    <Property Name="GioXeHang" Type="datetime" />
+    <Property Name="GioXe" Type="datetime" />
+    <Property Name="HangHoaID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="GiaMua" Type="float" Nullable="false" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="2000" />
+    <Property Name="TenKH" Type="nvarchar" MaxLength="2000" />
+    <Property Name="KhachHangID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="GhiChu" Type="nvarchar" />
+  </EntityType>
+  <Association Name="FK_HangHoaXeHang">
+    <End Role="HangHoa" Type="CanDienTuModel.Store.HangHoa" Multiplicity="1" />
+    <End Role="XeHang" Type="CanDienTuModel.Store.XeHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HangHoa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="XeHang">
+        <PropertyRef Name="HangHoaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

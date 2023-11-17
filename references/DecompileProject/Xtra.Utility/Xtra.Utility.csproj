@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Project\HH.CanOTo\references\CAN TRI VIET\Xtra.Utility.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C3BAB5D8-428D-4227-92AA-660BD5C447C8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Xtra.Utility</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>Xtra</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Utility\RegistryKeyHelper.cs" />
+    <Compile Include="Utility\ThreadExceptionDialog.cs" />
+    <Compile Include="Utility\WaitDialog.cs" />
+    <Compile Include="Utility\EntityBase.cs" />
+    <Compile Include="Utility\ViewModelBase.cs" />
+    <Compile Include="Utility\GridExportHelper.cs" />
+    <Compile Include="Utility\GridLayOutSaveHelper.cs" />
+    <Compile Include="Utility\ReadNumber.cs" />
+    <Compile Include="Utility\Populate.cs" />
+    <Compile Include="Utility\DateToInt.cs" />
+    <Compile Include="Utility\Keyboard.cs" />
+    <Compile Include="Utility\FontCase.cs" />
+    <Compile Include="Utility\FontIndex.cs" />
+    <Compile Include="Utility\ConvertFont.cs" />
+    <Compile Include="Utility\Profile\IReadOnlyProfile.cs" />
+    <Compile Include="Utility\Profile\IProfile.cs" />
+    <Compile Include="Utility\Profile\Profile.cs" />
+    <Compile Include="Utility\Profile\XmlBased.cs" />
+    <Compile Include="Utility\Profile\Xml.cs" />
+    <Compile Include="Utility\Profile\Registry.cs" />
+    <Compile Include="Utility\Profile\Ini.cs" />
+    <Compile Include="Utility\Profile\XmlBuffer.cs" />
+    <Compile Include="Utility\Profile\Config.cs" />
+    <Compile Include="Utility\Profile\ProfileChangeType.cs" />
+    <Compile Include="Utility\Profile\ProfileChangedArgs.cs" />
+    <Compile Include="Utility\Profile\ProfileChangingArgs.cs" />
+    <Compile Include="Utility\Profile\ProfileChangingHandler.cs" />
+    <Compile Include="Utility\Profile\ProfileChangedHandler.cs" />
+    <Compile Include="Utility\TiengViet\GridLocalizer.cs" />
+    <Compile Include="Utility\TiengViet\CustomizationControl.cs" />
+    <Compile Include="Utility\TiengViet\BarLocalizer.cs" />
+    <Compile Include="Utility\TiengViet\Format.cs" />
+    <Compile Include="Utility\TiengViet\PreviewLocalizer.cs" />
+    <Compile Include="Utility\TiengViet\ActiveVN.cs" />
+    <Compile Include="Utility\TiengViet\Localizer.cs" />
+    <Compile Include="Utility\Security\Encoder.cs" />
+    <Compile Include="Utility\ImageHelper\ImageHelper.cs" />
+    <Compile Include="Utility\ImageHelper\Image2Byte.cs" />
+    <Compile Include="ExcelImport\ExcelHelper.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Utility\ThreadExceptionDialog.resx" />
+    <EmbeddedResource Include="Utility\TiengViet\CustomizationControl.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
