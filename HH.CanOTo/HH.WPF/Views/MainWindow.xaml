@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HH.WPF"
+        xmlns:a="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
@@ -123,7 +124,10 @@
                         <ComboBox x:Name="cboCamera" Width="200" Margin="10" />
                     </StackPanel>
                     <Image x:Name="imgCamera" Width="400" Height="300" Margin="10" />
-                    <Button x:Name="btnStart">Start</Button>
+                    <WindowsFormsHost>
+                        <a:PictureBox x:Name="imageCamera"></a:PictureBox>
+                    </WindowsFormsHost>
+                    <Button x:Name="btnStart" Click="btnStart_Click">Start</Button>
                     
                 </StackPanel>
             </StackPanel>

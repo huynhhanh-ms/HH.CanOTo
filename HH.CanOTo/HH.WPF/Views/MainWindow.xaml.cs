@@ -16,6 +16,11 @@ using System.IO.Ports;
 using HH.WPF.Util;
 using HH.WPF.Views;
 
+using AForge.Video;
+using AForge.Video.DirectShow;
+using System.Drawing;
+using System.Windows.Interop;
+
 namespace HH.WPF
 {
     /// <summary>
@@ -25,15 +30,51 @@ namespace HH.WPF
     {
 
         private SerialPort serialPort;
+
+        private FilterInfoCollection filterInfoCollection;
+        private VideoCaptureDevice videoCaptureDevice;
         
         public MainWindow()
         {
 
             InitializeComponent();
             InitializeSerialPort();
+            InitializeCamera();
 
             DataGrids.gridview1.SelectedCellsChanged += MyDataGrid_SelectedCellsChanged;
         }
+
+        #region Camera Handling
+        private void InitializeCamera()
+        {
+            filterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            foreach (FilterInfo filterInfo in filterInfoCollection)
+                cboCamera.Items.Add(filterInfo.Name);
+            cboCamera.SelectedIndex = 0;
+            videoCaptureDevice = new VideoCaptureDevice();
+        }
+        private void btnStart_Click(object sender, RoutedEventArgs e)
+        {
+            videoCaptureDevice = new VideoCaptureDevice(filterInfoCollection[cboCamera.SelectedIndex].MonikerString);
+            videoCaptureDevice.NewFrame += VideoCaptureDevice_NewFrame;
+            videoCaptureDevice.Start();
+        }
+
+        private void VideoCaptureDevice_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        {
+            //BitmapSource bitmapSource = Imaging.CreateBitmapSourceFromHBitmap(
+            //    ((Bitmap)eventArgs.Frame.Clone()).GetHbitmap(),
+            //    IntPtr.Zero,
+            //    Int32Rect.Empty,
+            //    BitmapSizeOptions.FromEmptyOptions());
+
+            //imgCamera.Source = bitmapSource;
+
+            imageCamera.Image = (Bitmap)eventArgs.Frame.Clone();
+        }
+
+        #endregion
+
         private void Window_Closed(object sender, EventArgs e)
         {
             Application.Current.Shutdown(); // Terminate the application
@@ -204,5 +245,6 @@ namespace HH.WPF
             printerWindow.Owner = this;
             printerWindow.ShowDialog();
         }
+
     }
 }
