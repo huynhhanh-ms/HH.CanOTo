@@ -253,7 +253,7 @@ namespace HH.WPF
         private void ButtonInPhieuCan_Click(object sender, RoutedEventArgs e)
         {
             //open Printer window
-            PrinterWindow printerWindow = new PrinterWindow();
+            PrinterWindow printerWindow = new PrinterWindow(DataGrids.data.ShipmentList.Where(x => x.IsSelected).FirstOrDefault());
             printerWindow.Owner = this;
             printerWindow.ShowDialog();
         }

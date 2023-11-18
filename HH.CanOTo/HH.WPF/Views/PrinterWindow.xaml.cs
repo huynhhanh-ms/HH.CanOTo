@@ -25,8 +25,10 @@ namespace HH.WPF.Views
     /// </summary>
     public partial class PrinterWindow : Window
     {
-        public PrinterWindow()
+        private ShipmentModel printData;
+        public PrinterWindow(ShipmentModel printData)
         {
+            this.printData = printData;
             InitializeComponent();
             InitializePrinter();
         }
@@ -40,9 +42,6 @@ namespace HH.WPF.Views
 
                 // reportViewer.LocalReport.DataSources.Add(...); 
 
-                ShipmentModel printData = new ShipmentModel() { 
-                    
-                };
                 ReportParameter[] parameters = new ReportParameter[]
                 {
                     new ReportParameter("Id", printData.Id.ToString() ?? ""),
