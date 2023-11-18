@@ -90,6 +90,14 @@
                             </StackPanel>
                         </Button>
 
+                        <!-- Cài Đặt -->
+                        <Button Margin="10" Width="175px" Height="75px" Click="ButtonSetting_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Settings" Foreground="White" Height="25px" Width="25px"/>
+                                <TextBlock Text=" Cài Đặt" Foreground="White" FontSize="20px"/>
+                            </StackPanel>
+                        </Button>
+
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" Margin="20px" HorizontalAlignment="Center">
@@ -103,8 +111,6 @@
   Style="{StaticResource MaterialDesignPaperLightButton}"
   ToolTip="Resource name: MaterialDesignPaperLightButton" />
 
-                        <TextBox x:Name="positionTextBox" Text="Cell Position" IsReadOnly="True" VerticalAlignment="Top" Margin="10" />
-                        <TextBox x:Name="PortComViewRaw" Text="Com Raw : " IsReadOnly="True" VerticalAlignment="Top" Margin="10" />
 
 
                     </StackPanel>
@@ -140,5 +146,19 @@
 
         </Grid>
 
+        <StatusBar Height="30" VerticalAlignment="Bottom">
+            <StatusBarItem>
+                        <TextBlock x:Name="positionTextBox" Text="Cell Position"/>
+            </StatusBarItem>
+            <Separator />
+            <StatusBarItem>
+                        <TextBlock x:Name="PortComViewRaw" Text="Com Raw: "/>
+            </StatusBarItem>
+            <Separator />
+            <StatusBarItem>
+                <TextBlock x:Name="tbDiffWeight" Text="{Binding ...}"/>
+            </StatusBarItem>
+        </StatusBar>
     </Grid>
+
 </Window>

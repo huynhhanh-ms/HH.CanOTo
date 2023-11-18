@@ -29,6 +29,8 @@
             KeyUp="gridview1_KeyUp"
             CanUserSortColumns="False"
             CanUserAddRows="False"
+            CanUserDeleteRows="False"
+
                 CellEditEnding="gridview1_CellEditEnding"
                 SelectionMode="Single"
                 MouseLeftButtonDown="myDataGrid_MouseLeftButtonDown"

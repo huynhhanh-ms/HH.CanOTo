@@ -22,6 +22,7 @@ using System.Drawing;
 using System.Windows.Interop;
 using System.Threading;
 using System.ComponentModel;
+using System.IO;
 
 namespace HH.WPF
 {
@@ -38,10 +39,10 @@ namespace HH.WPF
 
         public MainWindow()
         {
-
             InitializeComponent();
             InitializeSerialPort();
             InitializeCamera();
+            Settings.LoadSettings();
 
             Closing += Window_Closed;
             DataGrids.gridview1.SelectedCellsChanged += MyDataGrid_SelectedCellsChanged;
@@ -102,11 +103,23 @@ namespace HH.WPF
                 int columnIndex = cellInfo.Column.DisplayIndex; // Index of the column
                 int rowIndex = DataGrids.gridview1.Items.IndexOf(cellInfo.Item); // Index of the row
 
-                positions.Append($"Column: {columnIndex + 1}, Row: {rowIndex + 1}\n");
+                positions.Append($"Column: {columnIndex + 1}, Row: {rowIndex + 1}");
+                break;
             }
 
             // Display positions in the TextBox
             positionTextBox.Text = positions.ToString();
+        }
+
+        private int GetFirstRowOfSelectedCells()
+        {
+            int firstRow = -1;
+            foreach (DataGridCellInfo cellInfo in DataGrids.gridview1.SelectedCells)
+            {
+                firstRow = DataGrids.gridview1.Items.IndexOf(cellInfo.Item);
+                break;
+            }
+            return firstRow;
         }
 
 
@@ -150,7 +163,7 @@ namespace HH.WPF
             Dispatcher.Invoke(() =>
             {
                 PortComView.Text = SerialPortReader.String2Num(data);
-                PortComViewRaw.Text = "Com Raw : " + data;
+                PortComViewRaw.Text = "Com Raw: " + data;
             });
         }
 
@@ -253,7 +266,7 @@ namespace HH.WPF
         private void ButtonInPhieuCan_Click(object sender, RoutedEventArgs e)
         {
             //open Printer window
-            PrinterWindow printerWindow = new PrinterWindow(DataGrids.data.ShipmentList.Where(x => x.IsSelected).FirstOrDefault());
+            PrinterWindow printerWindow = new PrinterWindow(DataGrids.data.ShipmentList[GetFirstRowOfSelectedCells()]);
             printerWindow.Owner = this;
             printerWindow.ShowDialog();
         }
@@ -335,6 +348,18 @@ namespace HH.WPF
             CancelAllTasks();
         }
         #endregion
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonSetting_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new WeightSettingWindow();
+            window.Owner = this;
+            window.ShowDialog();
+        }
     }
 
 
