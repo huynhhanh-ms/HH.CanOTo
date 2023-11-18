@@ -16,8 +16,15 @@ namespace HH.WPF
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            this.Exit += Window_Closed;
+
             XamlDisplay.Init();
             base.OnStartup(e);
+        }
+
+        private void Window_Closed(object sender, ExitEventArgs e)
+        {
+            Application.Current.Shutdown(); // Terminate the application
         }
     }
 }

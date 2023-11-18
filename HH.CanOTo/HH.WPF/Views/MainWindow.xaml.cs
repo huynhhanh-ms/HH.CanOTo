@@ -20,6 +20,8 @@ using AForge.Video;
 using AForge.Video.DirectShow;
 using System.Drawing;
 using System.Windows.Interop;
+using System.Threading;
+using System.ComponentModel;
 
 namespace HH.WPF
 {
@@ -33,7 +35,7 @@ namespace HH.WPF
 
         private FilterInfoCollection filterInfoCollection;
         private VideoCaptureDevice videoCaptureDevice;
-        
+
         public MainWindow()
         {
 
@@ -41,6 +43,7 @@ namespace HH.WPF
             InitializeSerialPort();
             InitializeCamera();
 
+            Closing += Window_Closed;
             DataGrids.gridview1.SelectedCellsChanged += MyDataGrid_SelectedCellsChanged;
         }
 
@@ -75,8 +78,17 @@ namespace HH.WPF
 
         #endregion
 
-        private void Window_Closed(object sender, EventArgs e)
+
+        private void Window_Closed(object sender, CancelEventArgs e)
         {
+            if (videoCaptureDevice.IsRunning)
+                videoCaptureDevice.Stop();
+            MessageBoxResult result = MessageBox.Show("Bạn Chắc Muốn Thoát Chứ", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.No)
+            {
+                e.Cancel = true;
+                return;
+            }
             Application.Current.Shutdown(); // Terminate the application
         }
 
@@ -193,7 +205,7 @@ namespace HH.WPF
             }
             DataGridCellInfo selectedCell = DataGrids.gridview1.SelectedCells[0];
 
-            foreach(var item in DataGrids.data.ShipmentList)
+            foreach (var item in DataGrids.data.ShipmentList)
             {
                 if (item.IsSelected)
                 {
@@ -220,7 +232,7 @@ namespace HH.WPF
             }
             DataGridCellInfo selectedCell = DataGrids.gridview1.SelectedCells[0];
 
-            foreach(var item in DataGrids.data.ShipmentList)
+            foreach (var item in DataGrids.data.ShipmentList)
             {
                 if (item.IsSelected)
                 {
@@ -246,5 +258,87 @@ namespace HH.WPF
             printerWindow.ShowDialog();
         }
 
+        #region
+        //To end or cancel all tasks in a WPF application,
+        //you can maintain a collection of tasks and cancel or wait for them to complete as needed.
+        //When the application is shutting down or you want to stop all tasks,
+        //you can loop through this collection and cancel or await the tasks.
+        private List<Task> runningTasks = new List<Task>();
+
+        //public MainWindow()
+        //{
+        //    InitializeComponent();
+        //}
+
+        // Method to start a new task
+        private async void StartNewTask()
+        {
+            CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
+            CancellationToken token = cancellationTokenSource.Token;
+
+            Task task = Task.Run(async () =>
+            {
+                // Simulated long-running task
+                await Task.Delay(5000, token); // Replace this with your actual task logic
+            }, token);
+
+            runningTasks.Add(task);
+
+            try
+            {
+                await task;
+            }
+            catch (OperationCanceledException ex)
+            {
+                // Handle cancellation if needed
+                Console.WriteLine("Task was canceled: " + ex.Message);
+            }
+            finally
+            {
+                runningTasks.Remove(task);
+                cancellationTokenSource.Dispose();
+            }
+        }
+
+        // Method to cancel all running tasks
+        private async void CancelAllTasks()
+        {
+            foreach (var task in runningTasks)
+            {
+                if (task.Status == TaskStatus.Running || task.Status == TaskStatus.WaitingToRun)
+                {
+                    try
+                    {
+                        // Cancel the task
+                        var taskCancellationSource = Task.FromCanceled(new CancellationToken(true));
+                        await taskCancellationSource;
+                    }
+                    catch (OperationCanceledException)
+                    {
+                        // Task was canceled
+                    }
+                }
+            }
+
+            runningTasks.Clear();
+        }
+
+        // Event handler to start a task
+        private void StartTaskButton_Click(object sender, RoutedEventArgs e)
+        {
+            StartNewTask();
+        }
+
+        // Event handler to cancel all tasks
+        private void CancelTasksButton_Click(object sender, RoutedEventArgs e)
+        {
+            CancelAllTasks();
+        }
+        #endregion
     }
+
+
+
+
+
 }

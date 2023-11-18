@@ -123,10 +123,12 @@
                         <TextBlock>Camera Name</TextBlock>
                         <ComboBox x:Name="cboCamera" Width="200" Margin="10" />
                     </StackPanel>
-                    <Image x:Name="imgCamera" Width="400" Height="300" Margin="10" />
+
+                    <!--<Image x:Name="imgCamera" Width="400" Height="300" Margin="10" />-->
                     <WindowsFormsHost>
-                        <a:PictureBox x:Name="imageCamera"></a:PictureBox>
+                        <a:PictureBox x:Name="imageCamera" Width="400" Height="300"></a:PictureBox>
                     </WindowsFormsHost>
+
                     <Button x:Name="btnStart" Click="btnStart_Click">Start</Button>
                     
                 </StackPanel>
