@@ -1,4 +1,5 @@
-﻿using Microsoft.Reporting.WinForms;
+﻿using HH.WPF.ViewModels;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.Drawing.Printing;
@@ -37,8 +38,29 @@ namespace HH.WPF.Views
                 string reportPath = @"Resources/PhieuCan.rdlc";
                 reportViewer.LocalReport.ReportPath = reportPath;
 
-                // Nạp dữ liệu vào báo cáo (nếu cần)
-                // reportViewer.LocalReport.DataSources.Add(...); // Thêm DataSource nếu cần
+                // reportViewer.LocalReport.DataSources.Add(...); 
+
+                ShipmentModel printData = new ShipmentModel() { 
+                    
+                };
+                ReportParameter[] parameters = new ReportParameter[]
+                {
+                    new ReportParameter("Id", printData.Id.ToString() ?? ""),
+                    new ReportParameter("TenKhachHang", printData.TenKhachHang ?? ""),
+                    new ReportParameter("DiaChi", printData.DiaChi ?? ""),
+                    new ReportParameter("LoaiHangHoa", printData.LoaiHangHoa ?? ""),
+                    new ReportParameter("BienSoXe", printData.BienSoXe?.ToString() ?? ""),
+                    new ReportParameter("TlXeHang", printData.TlXeHang.ToString()),
+                    new ReportParameter("TlXe", printData.TlXe.ToString()),
+                    new ReportParameter("TlHang", printData.TlHang.ToString()),
+                    //new ReportParameter("GiaMua", printData.GiaMua?.ToString() ?? ""),
+                    //new ReportParameter("ThanhTien", printData.ThanhTien?.ToString() ?? ""),
+                    new ReportParameter("NgayCan", printData.NgayCan ?.ToString("MM/dd/yyyy") ?? ""),
+                    new ReportParameter("GioCanXe", printData.GioCanXe?.ToString("HH:mm") ?? ""),
+                    new ReportParameter("GioCanXac", printData.GioCanXac ?.ToString("HH:mm") ?? ""),
+                    new ReportParameter("GhiChu", printData.GhiChu?.ToString() ?? "")
+                };
+                reportViewer.LocalReport.SetParameters(parameters);
 
 
                 reportViewer.SetPageSettings(new PageSettings
@@ -52,8 +74,8 @@ namespace HH.WPF.Views
                         Kind = PrinterResolutionKind.Custom
                     },
                     // Adjust margins (in hundredths of an inch)
-                    Margins = new System.Drawing.Printing.Margins(0,0,0,0) // Left, Right, Top, Bottom
-                    
+                    Margins = new System.Drawing.Printing.Margins(0, 0, 0, 0) // Left, Right, Top, Bottom
+
                 });
                 reportViewer.ZoomMode = ZoomMode.PageWidth;
                 // Hiển thị báo cáo trong ReportViewer

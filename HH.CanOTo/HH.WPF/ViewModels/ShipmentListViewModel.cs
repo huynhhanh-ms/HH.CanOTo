@@ -65,7 +65,8 @@ public class ShipmentListViewModel : ViewModelBase
 
         var item = ShipmentList[row];
         item.TlXe = value;
-        item.GioCanXe = DateTime.Now;
+        item.NgayCan = DateTime.Now;
+        item.GioCanXac = DateTime.Now;
         UpdateTlHangOfItem(item);
 
         return true;
